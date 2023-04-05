@@ -1,4 +1,4 @@
-.container-fluid {
+/* .container-fluid {
   padding-right: 0px;
   padding-left: 0px;
   margin-right: auto;
@@ -12,4 +12,20 @@
 }
 .card-text {
   text-align: left;
+} */
+
+img.img-fluid{
+  animation: idle 2s linear infinite;
+}
+
+@keyframes idle {
+  0%, 100% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
 }
