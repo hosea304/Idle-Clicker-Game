@@ -1,14 +1,15 @@
 let score = 0;
-let name = "Bunny";
-
 let cost = 15;
-let tambah = 0;
+
+let tambah = 1;
+
+let perClick = 1;
 
 let item1Cost = 50;
 let item1Level = 0;
 let item1Add = 1;
 
-let item2Cost = 100;
+let item2Cost = 150;
 let item2Level = 0;
 let item2Add = 5;
 
@@ -30,8 +31,8 @@ function buyButton(){
     }
 }
 
-function addToScore(amount){
-    score+=amount;
+function addToScore(){
+    score+=tambah;
     document.getElementById("score").innerHTML = score;
 }
 
@@ -40,8 +41,9 @@ function buyItem1(){
     {
         score-=item1Cost;
         item1Level++;
-        item1Add = Math.round(item1Add * 1.1);
-        item1Cost = Math.round(item1Cost * 1.1);
+        item1Add = Math.round(item1Add * 1.25);
+        item1Cost = Math.round(item1Cost * 1.25);
+        tambah+=score;
         
         document.getElementById("score").innerHTML = score;
         document.getElementById("item1Cost").innerHTML = item1Cost;
@@ -59,8 +61,9 @@ function buyItem2(){
     {
         score-=item2Cost;
         item2Level++;
-        item2Add = Math.round(item2Add * 1.1);
-        item2Cost = Math.round(item2Cost * 1.1);
+        item2Add = Math.round(item2Add * 1.5);
+        item2Cost = Math.round(item2Cost * 1.5);
+        tambah+=score;
         
         document.getElementById("score").innerHTML = score;
         document.getElementById("item2Cost").innerHTML = item2Cost;
