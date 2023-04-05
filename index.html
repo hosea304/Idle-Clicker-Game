@@ -8,8 +8,32 @@
   <link rel="stylesheet" href="style.css">
   <title>Idle Clicker</title>
   <body style="background-color: rgb(255, 213, 134);">
-    <div class="container-fluid text-center">
-      <h1 class="">Idle Clicker Game</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="width: 100%; background-color: salmon;">
+      <a class="navbar-brand" style="font-size: 20px; border-right:2px solid white; padding-right: 20px;" href="#">Idle Clicker Game</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active mx-2" href="#">Main Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="About us/about us.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="container" class="container-fluid text-center">
       <!-- score -->
       <div class="row justify-content-center my-2">
           <div id="scorebarbg" class="card col-lg-5 col-md-8 col-sm-10 col-11">
@@ -36,27 +60,27 @@
           <img src="char.gif" class="img-fluid" onclick="addToScore(1)"/>
         </div>
       </div>
-    </div>
-    <div id="item" class="d-lg-flex justify-content-center">
-        <!-- Item 1 -->
-        <div class="row justify-content-center my-1 mx-1">
-            <div id="item1" class="card">
-                <div class="card-body text-center justify-content-around ">
-                    <h5 class="card-title">Item 1</h5>
-                    <p class="card-text">Harga: <span id="item1Cost">50</span></p>
-                    <p class="card-text">Level: <span id="item1Level">0</span></p>
-                    <button class="btn btn-secondary" onclick="buyItem1()">Upgrade</button>
+        <div id="item" class="d-lg-flex justify-content-center">
+            <!-- Item 1 -->
+            <div class="row justify-content-center my-1 mx-1">
+                <div id="item1" class="card">
+                    <div class="card-body text-center justify-content-around ">
+                        <h5 class="card-title">Item 1</h5>
+                        <p class="card-text">Harga: <span id="item1Cost">50</span></p>
+                        <p class="card-text">Level: <span id="item1Level">0</span></p>
+                        <button class="btn btn-secondary" onclick="buyItem1()">Upgrade</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Item 2 -->
-        <div class="row justify-content-center my-1 mx-1">
-            <div id="item2" class="card">
-                <div class="card-body text-center justify-content-around">
-                    <h5 class="card-title">Paket Sedang</h5>
-                    <p class="card-text">Harga: <span id="item2Cost">100</span></p>
-                    <p class="card-text">Level: <span id="item2Level">0</span></p>
-                    <button class="btn btn-secondary" onclick="buyItem2()">Upgrade</button>
+            <!-- Item 2 -->
+            <div class="row justify-content-center my-1 mx-1">
+                <div id="item2" class="card">
+                    <div class="card-body text-center justify-content-around">
+                        <h5 class="card-title">Paket Sedang</h5>
+                        <p class="card-text">Harga: <span id="item2Cost">100</span></p>
+                        <p class="card-text">Level: <span id="item2Level">0</span></p>
+                        <button class="btn btn-secondary" onclick="buyItem2()">Upgrade</button>
+                    </div>
                 </div>
             </div>
         </div>

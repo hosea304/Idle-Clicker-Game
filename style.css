@@ -1,65 +1,72 @@
 * {
-  margin: 0;
-  padding: 0;
-  color: white;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.555);
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  overflow-x: hidden;
-  height: 100vh;
+    height: 100vh;
+    width: 100vw;
 }
 
-img.img-fluid{
-  animation: idle 2s linear infinite;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+img.img-fluid {
+    animation: idle 2s linear infinite;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-#scorebarbg, #beli {
-  width: 300px;
-  height: auto;
-  background-color: pink;
-  border: 5px solid salmon;
+#container {
+    margin-top: 65px;
+    color: white;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.555);
+}
+
+#scorebarbg,
+#beli {
+    width: 300px;
+    height: auto;
+    background-color: rgb(255, 202, 196);
+    border: 5px solid salmon;
 }
 
 #scorebarbg {
-  height: 150px;
+    height: 150px;
 }
 
-#item1, #item2 {
-  width: 400px;
-  background-color: pink;
-  border: 5px solid salmon;
+#item1,
+#item2 {
+    width: 400px;
+    background-color: rgb(255, 202, 196);
+    border: 5px solid salmon;
 }
 
 button.btn {
-  border: 2px solid salmon;
-  color: pink;
-  background-color: salmon;
-  width: 100px;
-  text-shadow: none;
+    border: 2px solid salmon;
+    color: rgb(255, 202, 196);
+    background-color: salmon;
+    width: 100px;
+    text-shadow: none;
 }
 
 button.btn:hover {
-  border: 2px solid salmon;
-  background-color: pink;
-  color: salmon;
+    border: 2px solid salmon;
+    background-color: rgb(255, 202, 196);
+    color: salmon;
 }
 
 @keyframes idle {
-  0%, 100% {
-    transform: translateX(0%);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
+    0%,
+    100% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
 }
