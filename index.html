@@ -1,91 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-  <link rel="stylesheet" href="style.css">
-  <title>Idle Clicker</title>
-  <body style="background-color: rgb(255, 213, 134);">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="width: 100%; background-color: salmon;">
-      <a class="navbar-brand" style="font-size: 20px; border-right:2px solid white; padding-right: 20px;" href="#">Idle Clicker Game</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active mx-2" href="#">Main Game</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-2" href="About us/about us.html">About Us</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Idle Clicker</title>
+  </head>
 
-    <div id="container" class="container-fluid text-center">
-      <!-- score -->
-      <div class="row justify-content-center my-2">
+  <body>
+    <div id="container">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark fixed-top"
+        style="width: 100%; background-color: salmon"
+      >
+        <a
+          class="navbar-brand"
+          style="
+            font-size: 20px;
+            border-right: 2px solid white;
+            padding-right: 20px;
+          "
+          href="#"
+          >Idle Clicker Game</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active mx-2" href="#">Main Game</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="About us/about us.html"
+                >About Us</a
+              >
+            </li>
+            <!-- reset button -->
+            <li class="nav-item">
+              <a
+                class="nav-link justify-content-lg-end mx-2"
+                onclick="resetValues(); window.location.reload()"
+                href="#"
+                >Reset Progress</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="container_gameplay" class="container-fluid text-center">
+        <!-- score -->
+        <div class="row justify-content-center my-2">
           <div id="scorebarbg" class="card col-lg-5 col-md-8 col-sm-10 col-11">
             <div id="scorebar" class="card-body">
               <h5 class="card-title">Score</h5>
-              <p class="card-text m-2"><span id="score">0</span></p>
-              <p class="card-text m-0">+<span id="tambah">1</span> per klik</p>
+              <p class="card-text m-2"><span id="score"></span></p>
+              <p class="card-text m-0">+<span id="tambah"></span> per klik</p>
             </div>
           </div>
-      </div>
-      <!-- Level -->
-      <div class="row justify-content-center my-2">
-        <div id="beli" class="card col-lg-5 col-md-8 col-sm-10 col-11">
+        </div>
+        <!-- Level -->
+        <div class="row justify-content-center my-2">
+          <div id="beli" class="card col-lg-5 col-md-8 col-sm-10 col-11">
             <div class="card-body">
-                <h5 class="card-title">Beli</h5>
-                <p class="card-text">Harga: <span id="cost">15</span></p>
-                <button class="btn btn-primary" onclick="buyButton()">Beli</button>
+              <h5 id="lvl" class="card-title"></h5>
+              <p class="card-text">Harga: <span id="cost">15</span></p>
+              <button class="btn btn-primary" onclick="buyButton()">
+                Upgrade
+              </button>
             </div>
+          </div>
         </div>
-      </div>
-      <!-- Character -->
-      <div class="row justify-content-center my-3" onclick="addToScore(1)">
-        <div class="col-sm-6 col-md-4 col-lg-2">
-          <img src="char.gif" class="img-fluid"/>
+        <!-- Character -->
+        <div class="row justify-content-center my-3" onclick="addToScore()">
+          <div class="col-sm-6 col-md-4 col-lg-2">
+            <img src="char.gif" class="img-fluid" />
+          </div>
         </div>
-      </div>
         <div id="item" class="d-lg-flex justify-content-center">
-            <!-- Item 1 -->
-            <div class="row justify-content-center my-1 mx-1">
-                <div id="item1" class="card">
-                    <div class="card-body text-center justify-content-around ">
-                        <h5 class="card-title">Item 1</h5>
-                        <p class="card-text">Harga: <span id="item1Cost">50</span></p>
-                        <p class="card-text">Level: <span id="item1Level">0</span></p>
-                        <button class="btn btn-secondary" onclick="buyItem1()">Upgrade</button>
-                    </div>
-                </div>
+          <!-- Item 1 -->
+          <div class="row justify-content-center my-1 mx-1">
+            <div id="item1" class="card">
+              <div class="card-body text-center justify-content-around">
+                <h5 class="card-title">More Clicks !</h5>
+                <p class="card-text">Harga: <span id="item1Cost"></span></p>
+                <p class="card-text">Level: <span id="item1Level"></span></p>
+                <button class="btn btn-secondary" onclick="buyItem1()">
+                  Upgrade
+                </button>
+              </div>
             </div>
-            <!-- Item 2 -->
-            <div class="row justify-content-center my-1 mx-1">
-                <div id="item2" class="card">
-                    <div class="card-body text-center justify-content-around">
-                        <h5 class="card-title">Paket Sedang</h5>
-                        <p class="card-text">Harga: <span id="item2Cost">100</span></p>
-                        <p class="card-text">Level: <span id="item2Level">0</span></p>
-                        <button class="btn btn-secondary" onclick="buyItem2()">Upgrade</button>
-                    </div>
-                </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="row justify-content-center my-1 mx-1">
+            <div id="item2" class="card">
+              <div class="card-body text-center justify-content-around">
+                <h5 class="card-title">Auto Click</h5>
+                <p class="card-text">Harga: <span id="item2Cost"></span></p>
+                <p class="card-text">Level: <span id="item2Level"></span></p>
+                <button class="btn btn-secondary" onclick="buyItem2()">
+                  Upgrade
+                </button>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    
 
     <script src="script.js"></script>
     <script
