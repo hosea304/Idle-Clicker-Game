@@ -12,6 +12,20 @@ let item2Level = 0;
 let item2Add = 5;
 
 let multiplier = 0;
+$(window).on("load", function(){
+    score = localStorage.getItem("currScore");
+    cost = localStorage.getItem("currCost");
+
+    tambahClick = localStorage.getItem("currTambahclick");
+    tambahIdle = localStorage.getItem("currTambahidle");
+
+    item1Cost = localStorage.getItem("currItem1cost");
+    item1Level = localStorage.getItem("currItem1level");
+    item1Add = localStorage.getItem("currItem1add");
+});
+
+
+
 function buyButton() {
     if (score >= cost) {
         score -= cost;
@@ -105,30 +119,3 @@ setInterval(function () {
     score += tambahIdle;
     document.getElementById("score").innerHTML = score;
 }, 1000);
-
-function format() {
-    let formattedScore;
-    let formattedCost;
-    let formattedItem1Cost;
-    let formattedItem2Cost;
-    if (score > 1000) {
-        formattedScore = (score / 1000).toFixed(3).replace(".", ",");
-    } else {
-        formattedScore = score;
-    }
-    if (cost > 1000) {
-        formattedCost = (cost / 1000).toFixed(3).replace(".", ",");
-    } else {
-        formattedCost = cost;
-    }
-    if (item1Cost > 1000) {
-        formattedItem1Cost = (item1Cost / 1000).toFixed(3).replace(".", ",");
-    } else {
-        formattedItem1Cost = item1Cost;
-    }
-    if (item2Cost > 1000) {
-        formattedItem2Cost = (item2Cost / 1000).toFixed(3).replace(".", ",");
-    } else {
-        formattedItem2Cost = item2Cost;
-    }
-}
