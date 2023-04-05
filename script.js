@@ -1,19 +1,19 @@
-let score = 0;
-let cost = 15;
-
-let tambahClick = 1;
-let tambahIdle = 0;
-
-let charlvl = 1;
-let item1Cost = 50;
-let item1Level = 0;
-
-let item2Cost = 100;
-let item2Level = 0;
-
-let multiplier = 0;
-
 $(window).on("load", function () {
+  let score = 0;
+  let cost = 15;
+
+  let tambahClick = 1;
+  let tambahIdle = 0;
+
+  let charlvl = 1;
+  let item1Cost = 50;
+  let item1Level = 0;
+
+  let item2Cost = 100;
+  let item2Level = 0;
+
+  let multiplier = 0;
+  
   if (
     "currCharlvl" in localStorage != null ||
     "currCharlvl" in localStorage != NaN
