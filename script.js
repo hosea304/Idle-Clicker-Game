@@ -14,6 +14,7 @@ function buyMurah(){
         murah = Math.round(murah * 1.15);
         
         document.getElementById("score").innerHTML = score;
+        document.getElementById("murah").innerHTML = murah;
         document.getElementById("tambah").innerHTML = tambah;
     }
 }
@@ -21,11 +22,12 @@ function buyMurah(){
 function buySedang(){
     if(score >= medium)
     {
-        score-=murah;
+        score-=medium;
         tambah += 20;
-        murah = Math.round(murah * 1.15);
+        medium = Math.round(medium * 1.5);
         
         document.getElementById("score").innerHTML = score;
+        document.getElementById("medium").innerHTML = medium;
         document.getElementById("tambah").innerHTML = tambah;
     }
 }
@@ -33,11 +35,12 @@ function buySedang(){
 function buyMahal(){
     if(score >= mahal)
     {
-        score-=murah;
+        score-=mahal;
         tambah += 100;
-        murah = Math.round(murah * 1.15);
+        mahal = Math.round(mahal * 1.75);
         
         document.getElementById("score").innerHTML = score;
+        document.getElementById("mahal").innerHTML = mahal;
         document.getElementById("tambah").innerHTML = tambah;
     }
 }
