@@ -1,18 +1,43 @@
 let score = 0;
 let name = "Bunny";
 
-let cost = 15;
+let murah = 15;
+let medium = 150;
+let mahal = 1500;
 let tambah = 0;
 
-function buyButton(){
-    if(score >= cost)
+function buyMurah(){
+    if(score >= murah)
     {
-        score-=cost;
+        score-=murah;
         tambah += 1;
-        cost = Math.round(cost * 1.15);
+        murah = Math.round(murah * 1.15);
         
         document.getElementById("score").innerHTML = score;
-        document.getElementById("cost").innerHTML = cost;
+        document.getElementById("tambah").innerHTML = tambah;
+    }
+}
+
+function buySedang(){
+    if(score >= medium)
+    {
+        score-=murah;
+        tambah += 20;
+        murah = Math.round(murah * 1.15);
+        
+        document.getElementById("score").innerHTML = score;
+        document.getElementById("tambah").innerHTML = tambah;
+    }
+}
+
+function buyMahal(){
+    if(score >= mahal)
+    {
+        score-=murah;
+        tambah += 100;
+        murah = Math.round(murah * 1.15);
+        
+        document.getElementById("score").innerHTML = score;
         document.getElementById("tambah").innerHTML = tambah;
     }
 }
