@@ -131,7 +131,7 @@ function buyItem2() {
     item2Level++;
     item2Cost = Math.round(item2Cost * 1.25);
 
-    tambahIdle += item2Level;
+    tambahIdle += Math.round(item2Level * 1.5);
 
     document.getElementById("score").innerHTML = score;
     document.getElementById("item2Cost").innerHTML = item2Cost;
