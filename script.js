@@ -1,13 +1,17 @@
-let score;
-let cost;
-let tambahClick;
-let tambahIdle;
-let charlvl;
-let item1Cost;
-let item1Level;
-let item2Cost;
-let item2Level;
-let multiplier;
+let score = 0;
+let cost = 15;
+
+let tambahClick = 1;
+let tambahIdle = 0;
+
+let charlvl = 1;
+let item1Cost = 50;
+let item1Level = 0;
+
+let item2Cost = 100;
+let item2Level = 0;
+
+let multiplier = 0;
 
 $(window).on("load", function () {
   if (
