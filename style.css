@@ -1,8 +1,15 @@
-.container-fluid{
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 100vw;
-    height: 100vh;
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card-title {
+  text-align: left;
+}
+.card-text {
+  text-align: left;
 }
