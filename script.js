@@ -84,6 +84,10 @@ function buyButton() {
       tambahClick += 100;
     } else if (cost > 10000 && cost < 100000) {
       tambahClick += 1000;
+    } else if (cost > 100000 && cost < 1000000) {
+      tambahClick += 10000;
+    } else if (cost > 1000000) {
+      tambahClick += 100000;
     } else {
       tambahClick += 1;
     }
