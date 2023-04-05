@@ -39,6 +39,7 @@
 }
 
 .box {
+  border-radius: 10px;
   position: relative;
   width: 600px;
   height: 400px;
