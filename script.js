@@ -14,10 +14,8 @@ let item2Level = 0;
 let multiplier = 0;
 
 $(window).on("load", function () {
-  if (
-    "currCharlvl" in localStorage != null ||
-    "currCharlvl" in localStorage != NaN
-  ) {
+  
+  if ("currCharlvl" in localStorage && "currScore" in localStorage && "currCost" in localStorage && "currTambahclick" in localStorage && "currTambahidle" in localStorage && "currItem1cost" in localStorage && "currItem1level" in localStorage && "currItem2cost" in localStorage && "currItem2level" in localStorage && "currMultiplier" in localStorage) {
     charlvl = parseInt(localStorage.getItem("currCharlvl"));
     score = parseInt(localStorage.getItem("currScore"));
     cost = parseInt(localStorage.getItem("currCost"));
@@ -84,6 +82,10 @@ function buyButton() {
       tambahClick += 100;
     } else if (cost > 10000 && cost < 100000) {
       tambahClick += 1000;
+    } else if (cost > 100000 && cost < 1000000) {
+      tambahClick += 10000;
+    } else if (cost > 1000000) {
+      tambahClick += 100000;
     } else {
       tambahClick += 1;
     }
@@ -129,7 +131,7 @@ function buyItem2() {
     item2Level++;
     item2Cost = Math.round(item2Cost * 1.25);
 
-    tambahIdle += item2Level;
+    tambahIdle += Math.round(item2Level * 1.5);
 
     document.getElementById("score").innerHTML = score;
     document.getElementById("item2Cost").innerHTML = item2Cost;
