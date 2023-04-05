@@ -1,21 +1,55 @@
-/* .container-fluid {
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-right: auto;
-  margin-left: auto;
-  width: 100vw;
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.555);
+}
+
+html {
+  overflow-x: hidden;
   height: 100vh;
 }
 
-.card-title {
-  text-align: left;
-}
-.card-text {
-  text-align: left;
-} */
-
 img.img-fluid{
   animation: idle 2s linear infinite;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#scorebarbg, #beli {
+  width: 300px;
+  height: auto;
+  background-color: pink;
+  border: 5px solid salmon;
+}
+
+#scorebarbg {
+  height: 150px;
+}
+
+#item1, #item2 {
+  width: 400px;
+  background-color: pink;
+  border: 5px solid salmon;
+}
+
+button.btn {
+  border: 2px solid salmon;
+  color: pink;
+  background-color: salmon;
+  width: 100px;
+  text-shadow: none;
+}
+
+button.btn:hover {
+  border: 2px solid salmon;
+  background-color: pink;
+  color: salmon;
 }
 
 @keyframes idle {

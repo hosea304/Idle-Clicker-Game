@@ -7,7 +7,7 @@ let item1Cost = 50;
 let item1Level = 0;
 let item1Add = 1;
 
-let item2Cost = 150;
+let item2Cost = 100;
 let item2Level = 0;
 let item2Add = 5;
 
