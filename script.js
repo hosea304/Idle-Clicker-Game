@@ -14,8 +14,18 @@ let item2Level = 0;
 let multiplier = 0;
 
 $(window).on("load", function () {
-  
-  if ("currCharlvl" in localStorage && "currScore" in localStorage && "currCost" in localStorage && "currTambahclick" in localStorage && "currTambahidle" in localStorage && "currItem1cost" in localStorage && "currItem1level" in localStorage && "currItem2cost" in localStorage && "currItem2level" in localStorage && "currMultiplier" in localStorage) {
+  if (
+    "currCharlvl" in localStorage &&
+    "currScore" in localStorage &&
+    "currCost" in localStorage &&
+    "currTambahclick" in localStorage &&
+    "currTambahidle" in localStorage &&
+    "currItem1cost" in localStorage &&
+    "currItem1level" in localStorage &&
+    "currItem2cost" in localStorage &&
+    "currItem2level" in localStorage &&
+    "currMultiplier" in localStorage
+  ) {
     charlvl = parseInt(localStorage.getItem("currCharlvl"));
     score = parseInt(localStorage.getItem("currScore"));
     cost = parseInt(localStorage.getItem("currCost"));
@@ -90,7 +100,8 @@ function buyButton() {
       tambahClick += 1;
     }
 
-    const audio = new Audio('Asset Suara/sfx.mp3');
+    const audio = new Audio("Asset Suara/buysfx.mp3");
+    audio.volume = 0.3;
     audio.play();
 
     document.getElementById("lvl").innerHTML = "Click Level " + charlvl;
@@ -106,10 +117,10 @@ function buyButton() {
 function addToScore() {
   score += tambahClick;
   document.getElementById("score").innerHTML = score;
-  const audio = new Audio('Asset Suara/sfx.mp3');
+  const audio = new Audio("Asset Suara/sfx.mp3");
+  audio.volume = 0.5;
   audio.play();
 }
-
 
 function buyItem1() {
   if (score >= item1Cost) {
@@ -121,7 +132,8 @@ function buyItem1() {
     let add = Math.pow(2, multiplier);
     tambahClick += add;
 
-    const audio = new Audio('Asset Suara/sfx.mp3');
+    const audio = new Audio("Asset Suara/buysfx.mp3");
+    audio.volume = 0.3;
     audio.play();
 
     document.getElementById("score").innerHTML = score;
@@ -142,7 +154,8 @@ function buyItem2() {
 
     tambahIdle += Math.round(item2Level * 1.5);
 
-    const audio = new Audio('Asset Suara/sfx.mp3');
+    const audio = new Audio("Asset Suara/buysfx.mp3");
+    audio.volume = 0.3;
     audio.play();
 
     document.getElementById("score").innerHTML = score;
@@ -210,7 +223,6 @@ function resetValues() {
   localStorage.removeItem("currItem2cost");
   localStorage.removeItem("currItem2level");
   localStorage.removeItem("currMultiplier");
-
 
   document.getElementById("lvl").innerHTML = "Click Level " + charlvl;
   document.getElementById("score").innerHTML = score;
