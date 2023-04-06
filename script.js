@@ -90,6 +90,9 @@ function buyButton() {
       tambahClick += 1;
     }
 
+    const audio = new Audio('Asset Suara/sfx.mp3');
+    audio.play();
+
     document.getElementById("lvl").innerHTML = "Click Level " + charlvl;
     document.getElementById("score").innerHTML = score;
     document.getElementById("cost").innerHTML = cost;
@@ -103,7 +106,10 @@ function buyButton() {
 function addToScore() {
   score += tambahClick;
   document.getElementById("score").innerHTML = score;
+  const audio = new Audio('Asset Suara/sfx.mp3');
+  audio.play();
 }
+
 
 function buyItem1() {
   if (score >= item1Cost) {
@@ -114,6 +120,9 @@ function buyItem1() {
     multiplier++;
     let add = Math.pow(2, multiplier);
     tambahClick += add;
+
+    const audio = new Audio('Asset Suara/sfx.mp3');
+    audio.play();
 
     document.getElementById("score").innerHTML = score;
     document.getElementById("item1Cost").innerHTML = item1Cost;
@@ -132,6 +141,9 @@ function buyItem2() {
     item2Cost = Math.round(item2Cost * 1.25);
 
     tambahIdle += Math.round(item2Level * 1.5);
+
+    const audio = new Audio('Asset Suara/sfx.mp3');
+    audio.play();
 
     document.getElementById("score").innerHTML = score;
     document.getElementById("item2Cost").innerHTML = item2Cost;
@@ -198,6 +210,7 @@ function resetValues() {
   localStorage.removeItem("currItem2cost");
   localStorage.removeItem("currItem2level");
   localStorage.removeItem("currMultiplier");
+
 
   document.getElementById("lvl").innerHTML = "Click Level " + charlvl;
   document.getElementById("score").innerHTML = score;
