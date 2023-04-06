@@ -234,3 +234,9 @@ function resetValues() {
   document.getElementById("item2Level").innerHTML = item2Level;
   document.getElementById("tambahps").innerHTML = "";
 }
+
+
+const audio = new Audio('backsound/backsound.mp3');
+audio.volume = 0.4;
+audio.play();
+audio.loop = true;
