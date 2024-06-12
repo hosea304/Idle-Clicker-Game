@@ -8,6 +8,10 @@ Christopher Mesaya (00000070524)
 Benedick Christopher Bamba (00000071174)
 Prajna Ananda Citra (00000070561)
 
+Direkomendasikan menggunakan extension live server di aplikasi Visual Studio Code dalam membuka codenya.
+
+Link Github: https://github.com/hosea304/UTS-PTI-LAB
+
 Aturan Permainan:
 
 1. Pada awal game tidak ada penambahan score secara otomatis, pemain harus melakukan klik pada karakter secara manual untuk menambahkan score.
